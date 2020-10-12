@@ -33,8 +33,8 @@ const questions = [
 
 (async () => {
     const response = await prompts(questions);
-    console.info(response);
     if (Object.keys(response).length === 0) { console.error("User aborted the cli"); process.exit(0); }
+    console.info(response);
     const packageJsonPath = `./${response.projectName}/package.json`;
     console.log("Creating directory");
     fs.mkdirSync(response.projectName);
