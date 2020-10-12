@@ -10,9 +10,6 @@
   "bin": {
     "ntas": "./index.js"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/essuraj/node-ts-api-starter-cli.git"
