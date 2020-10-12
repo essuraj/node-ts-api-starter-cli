@@ -8,4 +8,7 @@
 - Swagger Starter included
 - Code split into their own files for routes, logging included.
 - ES6+
-
+```
+> npm i -g node-ts-api-starter-cli
+> ntas
+```
