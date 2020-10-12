@@ -48,12 +48,15 @@ const questions = [
 
     clone(cloneURL, `./${response.projectName}`, undefined, () => {
 
+        var packageJson = JSON.parse(fs.readFileSync(packageJsonPath, { encoding: "utf-8" }));
+        packageJson.name = response.projectName;
+
         if (response.needsMongoose === false) {
             console.log("Removing mongodb entries " + response.version);
             fs.rmdirSync(`./${response.projectName}/src/models`, { recursive: true })
+            delete packageJson.dependencies.mongoose;
+            delete packageJson.devDependencies["@types/mongoose"];
         }
-        var packageJson = JSON.parse(fs.readFileSync(packageJsonPath, { encoding: "utf-8" }));
-        packageJson.name = response.projectName;
         fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2), { flag: "w" });
     })
 })();
