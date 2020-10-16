@@ -44,7 +44,7 @@ const questions = [
         cloneURL = "https://github.com/stuworx/node-ts-api-starter.git";
 
     if (response.version === "V2")
-        cloneURL = "https://github.com/stuworx/node-ts-api-starter.git";
+        cloneURL = "https://github.com/essuraj/node-ts-api-starter-v2.git";
 
     clone(cloneURL, `./${response.projectName}`, undefined, () => {
 
